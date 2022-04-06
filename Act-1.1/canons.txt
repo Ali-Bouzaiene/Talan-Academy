@@ -1,0 +1,13 @@
+Algorithme TotalCoups
+
+Const nbrCanons <- 24 ; cadence <- 12.5 ; minutes <- 35;
+ Var totalCoups : réél; 
+
+Début
+
+	totalcoups <- ((minute*60)/cadence)*nbrCanons;
+	Afficher ( "nbr des coups", totalcoups);
+
+Fin
+
+

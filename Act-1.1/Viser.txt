@@ -1,0 +1,29 @@
+Algorithme viser
+
+Variables angle,a,n: entier;
+reslt: booléen;
+
+Début
+
+angle <- alea(1,50);
+reslt <- faux;
+n <- 0
+tantque (reslt==faux et n<5) faire
+
+n <- n+1;
+
+afficher("Entrez la position de l'ennemi:");
+saisir(a);
+
+si (a == angle) alors
+reslt <- vrai;
+afficher ("bravo vous avez coulé votre ennemi");
+sinon si (a < angle)
+afficher ("Aide : l'angle est plus petit");
+sinon
+afficher ("Aide : l'angle est plus grand");
+finsi
+
+fintantque
+
+Fin

@@ -1,0 +1,17 @@
+Algorithme GrandNb
+var n, max : réel;
+var t : tableau;
+Début
+	Pour i <- 0 à 19 faire
+	afficher("Entrez le nombre numéro ");
+	saisir(n);
+	t[i] <- n;
+	fin Pour
+    max <- t[0]
+	Pour i <- 1 à 19 faire
+		si t[i]>max
+		alors max <- t[i];
+		fin si
+	fin Pour
+     afficher("Le plus grand de ces nombres est ", max);
+fin

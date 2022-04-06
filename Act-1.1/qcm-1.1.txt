@@ -1,0 +1,24 @@
+    Activité 1.1.1 : QCM-1.1	
+
+QCM 1 - Qu'est-ce que l'algorithmique ?
+        b)L'intelligence derrière le code;
+	d)Une manière de programmer;
+
+QCM 2 - Qu'est-ce qu'une Variable ?
+	c)Une entité inconnue dans le code;
+
+QCM 3 - Qu'est-ce qu'un Type ?
+	c)Une précision sur le contenu d'une variable;
+
+QCM 4 - Qu'est-ce qu'une Condition ?
+
+	b)Un test d'expression booléenne;
+
+QCM 5 - Qu'est-ce qu'une Boucle ?
+
+	c)Une itération sur une suite d'éléments;	
+
+QCM 6 - Qu'est-ce que la Complexité ?
+
+	b)La totalité des instructions élémentaires d'un algorithme;
+	
