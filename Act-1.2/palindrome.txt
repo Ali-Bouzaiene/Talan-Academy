@@ -1,0 +1,46 @@
+algorithme Palindrome
+var ch,ch1:chaine de caractere;
+debut
+afficher("donner la chaine de caractere ch");
+saisir(ch);
+pour i de 0 à long(ch)-1 faire
+	Ch1[i] = ch[long(ch)-1-i]
+fin pour
+afficher("donner la nouvelle chaine de caractere ch1");
+si (ch == Ch1)alors
+	afficher("C'est un palindrome");
+finsi
+fin
+
+fonction:
+fonction palindrome(val ch: chaine de caractères): boolean;
+var ch,ch1:chaine de caractere;
+debut
+pour i de 0 à long(ch)-1 faire
+	Ch1[i] = ch[long(ch)-1-i]
+fin pour
+afficher("donner la nouvelle chaine de caractere ch1");
+si (ch == Ch1)alors
+	 retourner("C'est un palindrome");
+finsi
+fin
+finfonction
+
+programme complet:
+var ch:chaine de caractere;
+debut
+afficher("donner la chaine de caractere ch");
+saisir(ch);
+fonction palindrome(val ch: chaine de caractères): boolean;
+var ch1:chaine de caractere;
+debut
+pour i de 0 à long(ch)-1 faire
+	Ch1[i] = ch[long(ch)-1-i]
+fin pour
+afficher("donner la nouvelle chaine de caractere ch1");
+si (ch == Ch1)alors
+	 retourner("C'est un palindrome");
+finsi
+fin
+finfonction
+fin

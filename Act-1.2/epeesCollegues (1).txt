@@ -1,0 +1,21 @@
+Activité 1.2.2 : Les épées de vos collègues
+
+fonction EpeesCollegues(ref T :tableau[1..12] de chaines de caractères) : vide;
+var i,j,k :entier;
+var T <- [Alban, Jim, Bob, Albatroz, Jinto, Bow, Hijo, Manu, Seb, Teilo, Charles, Xavier];
+
+début
+    pour i allant de 1 à 11 faire
+      pour j allant de 12 à i+1 par pas de -1 faire
+	répéter		
+		k <- 0
+        	si T[j][k] < T[j-1][k] alors
+          	echange(T, j, j-1);
+		sinon si T[j][k] = T[j-1][k] alors
+			k <- k + 1		
+        	finsi		
+	jusqu'à k = min(long(T[j]),long(T[j-1]))
+      finpour
+    finpour
+  fin
+finfonction

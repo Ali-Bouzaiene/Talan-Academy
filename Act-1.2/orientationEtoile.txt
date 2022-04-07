@@ -1,0 +1,42 @@
+﻿fonction triInsertion(ref T :tableau[1..N] chaine de cartères,):vide;
+var i,j,k:entier;
+T=["Sirius", "Rigel", "Bételgeuse", "Arcturus", "Aldébaran", "Véga", "Deneb", "Altaïr"];
+Début
+        pour i de 1 à taille(T) - 1
+            k ← T[i];                   
+            j ← i;                               
+            tant que j > 0 et T[j- 1] > k
+                     T[j] ← T[j-1];
+                     j ← j - 1;
+                     T[j] ← k ;
+            fin tanque
+        fin pour
+Fin
+Fin fonction
+
+fonction insertion dans tabtrié (ref T :tableau[1..N] chaine de cartères,):vide;
+var i,j:entier;
+T=["Sirius", "Rigel", "Bételgeuse", "Arcturus", "Aldébaran", "Véga", "Deneb", "Altaïr"];
+k: élément
+i <- taille
+tant que i > 0 et T[i-1] > k faire
+  T[i] <- T[i-1]
+  i <- i-1
+  T[i] <- k
+  taille <- taille + 1
+fin tanque
+finfonction
+
+
+fonction rechdicho(ref T :tableau[1..N] chaine de cartères,):vide;
+var i,j:entier;
+T=["Sirius", "Rigel", "Bételgeuse", "Arcturus", "Aldébaran", "Véga", "Deneb", "Altaïr"];
+k: élément
+si min = max alors
+ si T[min] = k alors retourner min
+sinon retourner NonTrouvé
+mid <- (min + max) / 2
+si tab[mid] < k alors
+retourner RechDicho(T, mid+1, max, k)
+sinon
+retourner RechDichoRec(tab, min, mid, k)
