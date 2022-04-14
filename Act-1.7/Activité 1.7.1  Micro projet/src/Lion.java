@@ -1,5 +1,5 @@
-
-public class Lion implements LionAction,PredateurAction {
+import java.util.Scanner;
+public class Lion extends Predateur implements LionAction,PredateurAction {
 	 
 	protected String facteur ;
 	protected String rang ;
@@ -17,14 +17,49 @@ public class Lion implements LionAction,PredateurAction {
 	public String getFacteur (){
 		return this.facteur=facteur;
 	}
-	public String setFacteur () {
-		return this.facteur=facteur;
+	public void setFacteur () {
+		 do {
+		Scanner scanne = new Scanner(System.in);
+		System.out.println("donner le facteur de dommination : d pour domminat et Nd si non dominant");
+		String fact_dom=scanne.nextLine();
+		
+		if(fact_dom.equals("d")) {
+			this.facteur="dominant";
+		}
+		else if (fact_dom.equals("nd")) {
+			this.facteur="non dominant";
+			
+		}
+		else {System.out.println("choix erroné");}
+		 }while(facteur==null);
 	}
 	public String getRang() {
 		return this.rang=rang;
 	}
-	public String setRang() {
-		return this.rang=rang;
+	public void setRang() {
+		do {
+			Scanner scann = new Scanner(System.in);
+			System.out.println("donner le rang de domination, A ou B ou g ou o");
+			String rang_domin=scann.nextLine();
+			
+			if(rang_domin.equals("A")) {
+				this.rang="Alpha";
+			}
+			else if (rang_domin.equals("b")) {
+				this.rang="BETA";
+				
+			}
+			else if (rang_domin.equals("g")) {
+				this.rang="GAMA";
+					
+				}
+			else if  (rang_domin.equals("o")) {
+				this.rang="OMEGA";
+					
+				}
+			
+			
+		}while(rang==null);
 	}
 	public int getFImpetuosite() {
 		return this.fImpetuosite=fImpetuosite;
@@ -35,7 +70,7 @@ public class Lion implements LionAction,PredateurAction {
 	
 	@Override
 	public void AfficherCrct() {
-		// TODO Auto-generated method stub
+		System.out.println("les carracteristiques de ce lion sont"+" "+"age:"+" "+this.getAge()+" "+"Un facteur de domination:"+" "+this.getFacteur()+" "+"Un rang : "+" "+this.getRang());
 		
 	}
 

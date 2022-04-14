@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class Ours extends Predateur implements OursAction {
 	
 	protected int fAgrsvt ;
@@ -9,47 +9,78 @@ public class Ours extends Predateur implements OursAction {
 		this.P=P;
 		this.hivernation=hivernation;		
 	}
-	public Ours(String sexe, String categorie, String force, String groupe) {
-				super( sexe, categorie, force, groupe);
+	public Ours(String sexe, String age, int force, String groupe) {
+				super( sexe, age, force, groupe);
 	}
-	
+	public Ours() {
+		
+}
 
 	public int getfAgrsvt() {
 		return this.fAgrsvt=fAgrsvt;
 	}
-	public int setfAgrsvt() {
-		return this.fAgrsvt = fAgrsvt;
+	public void setfAgrsvt() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("donner un facteur d'agressivité de 0 à10");
+		int f=input.nextInt();
+		do {			
+			if((f>=0)&&(f<=10)) {
+				this.fAgrsvt=f;
+				
+			}
+			else {
+				System.out.println("facteur non adéquat");
+			}
+			}while(fAgrsvt==0);
+			
+		
 	}
 	public int getP() {
 		return this.P =P;
 	}
-	public int setP() {
-		return this.P=P;
+	public void setP() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("donner sa puissance ");
+		int P=input.nextInt();
+		
+		this.P=P;
+			
 	}
 	public String getHivernation() {
 		return this.hivernation=hivernation;
 	}
-	public String setHivernation() {
-		return this.hivernation=hivernation;
+	public void setHivernation() {
+		Scanner input = new Scanner(System.in);
+		System.out.println("donner le Statut d'hivernation");
+		String Sh=input.nextLine();
+		Sh="hiver";
+		do {			
+			if((Sh=="été" || Sh=="printemps"|| Sh=="automne")) {
+				this.hivernation="terminée";
+				
+			}
+			else {
+				System.out.println("en cours");
+			}
+			}while(hivernation==null);
 	}
+	
+	
 	@Override
-	public void Chasser() {		
-		super.Chasser();
+	public void Chasser() {			
 		System.out.print("l'ours chasse les animaux");
 	}
 	@Override
-	public void Courrir() {		
-		super.Courrir();
+	public void Courrir() {				
 		System.out.print("l'ours court pour chasser les animaux");
 	}
 	@Override
-	public void Emettre_un_son() {		
-		super.Emettre_un_son();
+	public void Emettre_un_son() {				
 		System.out.print("l'ours emettre un son pour dissuader d'autres prédateurs");
 	}
 	@Override
 	public void CrctOurs() {
-		// TODO Auto-generated method stub
+		System.out.println("les carracteristiques de cet ours sont"+" "+"age:"+" "+this.getAge()+" "+"Un facteur d'agressivité :"+" "+this.getfAgrsvt()+" "+"la puissance :"+" "+this.getP()+" "+"Statut d'hivernation :"+" "+this.getHivernation());
 		
 	}
 
