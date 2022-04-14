@@ -32,7 +32,7 @@ public class GroupePredateur implements GroupePredateurAction {
 	
 	@Override
 	public void afficherPropresCrct() {
-		System.out.println("cette groupe vive dans la zone de :"+", "+this.getZone());
+		System.out.println("cette groupe vive dans la zone de :"+" "+this.getZone());
 	}		
 	
 	@Override
