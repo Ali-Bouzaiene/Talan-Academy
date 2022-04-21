@@ -1,0 +1,8 @@
+\i 'C:/Users/abouzaiene/Desktop/Talan/Act-2.3/Act-2.3.4  Copieur!/fiche_personne.SQL'
+SELECT * FROM fiche_personne ;
+SELECT * FROM fiche_personne WHERE nom LIKE '%a%';
+INSERT INTO ft_table(login, date_de_creation)
+SELECT nom, date_de_creation
+FROM fiche_personne
+WHERE nom LIKE '%a%' AND nom LIKE '________' ORDER BY id LIMIT 10;
+UPDATE ft_table SET groupe = 'other' WHERE groupe is NULL;

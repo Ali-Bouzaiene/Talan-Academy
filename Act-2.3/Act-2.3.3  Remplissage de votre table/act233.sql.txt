@@ -1,0 +1,44 @@
+db_ali=# INSERT INTO ft_table (
+db_ali(# id,
+db_ali(# login,
+db_ali(# groupe,
+db_ali(# date_de_creation )
+db_ali-# VALUES (1,'loki','staff',DATE ’2014-01-01’);
+INSERT 0 1
+db_ali=# INSERT INTO ft_table (
+db_ali(# id,
+db_ali(# login,
+db_ali(# groupe,
+db_ali(# date_de_creation )
+db_ali-# VALUES (2,’scadoux’,’student’,DATE ’2014-01-01’);
+INSERT 0 1
+db_ali=# INSERT INTO ft_table (
+db_ali(# id,
+db_ali(# login,
+db_ali(# groupe,
+db_ali(# date_de_creation )
+db_ali-# VALUES (3,’chap’,’staff’,DATE ’2011-04-27’);
+INSERT 0 1
+db_ali=# INSERT INTO ft_table (
+db_ali(# id,
+db_ali(# login,
+db_ali(# groupe,
+db_ali(# date_de_creation )
+db_ali-# VALUES (4,’bambou’,’staff’,DATE ’2014-03-01’);
+INSERT 0 1
+db_ali=# INSERT INTO ft_table (
+db_ali(# id,
+db_ali(# login,
+db_ali(# groupe,
+db_ali(# date_de_creation )
+db_ali-# VALUES (5,’fantomet’,’staff’,DATE ’2010-04-03’);
+INSERT 0 1
+db_ali=# SELECT * FROM ft_table;
+ id |  login   | groupe  | date_de_creation
+----+----------+---------+------------------
+  1 | loki     | staff   | 2014-01-01
+  2 | scadoux  | student | 2014-01-01
+  3 | chap     | staff   | 2011-04-27
+  4 | bambou   | staff   | 2014-03-01
+  5 | fantomet | staff   | 2010-04-03
+(5 lignes)

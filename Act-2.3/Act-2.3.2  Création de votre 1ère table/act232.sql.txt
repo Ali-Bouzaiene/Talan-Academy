@@ -1,0 +1,18 @@
+db_ali=#\c db_ali
+db_ali=#CREATE TYPE grp AS ENUM ('staff', 'student', 'othe');
+db_ali=# CREATE TABLE ft_table (
+db_ali(# id INT NOT NULL PRIMARY KEY,
+db_ali(# login VARCHAR(50) NOT NULL DEFAULT ('toto'),
+db_ali(# groupe grp NOT NULL,
+db_ali(# date_de_creation DATE NOT NULL );
+
+db_ali=# \d ft_table
+                                     Table ½ public.ft_table ╗
+     Colonne      |         Type          | Collationnement | NULL-able |        Par dÚfaut
+------------------+-----------------------+-----------------+-----------+---------------------------
+ id               | integer               |                 | not null  |
+ login            | character varying(50) |                 | not null  | 'toto'::character varying
+ groupe           | grp                   |                 | not null  |
+ date_de_creation | date                  |                 | not null  |
+Index :
+    "ft_table_pkey" PRIMARY KEY, btree (id)
