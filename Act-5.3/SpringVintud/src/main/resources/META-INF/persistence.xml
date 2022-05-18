@@ -5,32 +5,25 @@ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 version="2.1">
 
-
-
-<persistence-unit name="WebStore">
-
-<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-<class>/SpringVintud/src/main/java/com/SpringVintud/SpringVintud/UserImp.java</class>
+<persistence-unit name="Vintud">
+<provider>com.SpringVintud.SpringVintud.UserImp</provider>
+<class>com.SpringVintud.SpringVintud.UserImp</class>
 
 <properties>
 <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
-<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/vintud" /> <!-- BD Mane -->
+<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/vintud" /> <!-- BD Mane -->
 <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
 <property name="javax.persistence.jdbc.password" value="09713359" /> <!-- DB Password -->
-
 
 
 <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
 <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
 
+
 <property name="hibernate.show_sql" value="true" /> <!-- Show SQL in console -->
 <property name="hibernate.format_sql" value="true" /> <!-- Show SQL formatted -->
 </properties>
 
-
-
 </persistence-unit>
-
-
 
 </persistence>

@@ -1,17 +1,36 @@
 package com.SpringVintud.SpringVintud;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-import java.sql.Blob;
-import java.sql.Date;
-
+@Entity @Table (name="announcement")
 public class AnnouncementImpl {
-		
-		private String titre,description,localisation;
+	@Id @GeneratedValue( strategy=GenerationType.IDENTITY )
+	@Column( name="title" )
+		private String titre;
+	@Column( name="description" )
+		private String description;
+	@Column( name="localisation" )
+		private String localisation;
+	@Column( name="price" )
 		private double prix;
-		private int user_id,id,nbrVue,catégorie;
+	@Column( name="user_id" )
+		private int user_id;
+	@Column( name="id" )
+		private int id;
+	@Column( name="view_number" )
+		private int nbrVue;
+	@Column( name="category_id" )
+		private int catégorie;
+	@Column( name="publication_date" )
 		private String datePub;
+	@Column( name="picture" )
 		private String photo;
+	@Column( name="is_available" )
 		private boolean valide;
 			public AnnouncementImpl(int id,String titre,String description,int catégorie,double prix,String photo,String datePub,boolean valide,int nbrVue,String localisation,int user_id) {
 					this.id=id;

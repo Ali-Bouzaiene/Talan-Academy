@@ -1,10 +1,19 @@
 package com.SpringVintud.SpringVintud;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
+@Entity @Table (name="category")
 public class CategoryImpl {
-	
-		private String nom,description;
+	@Id @GeneratedValue( strategy=GenerationType.IDENTITY )
+	@Column( name="name" )
+		private String nom;
+	@Column( name="description" )
+		private String description;
 		
 		public CategoryImpl(String nom,String description) {
 				this.nom=nom;

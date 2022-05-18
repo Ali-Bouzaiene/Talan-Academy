@@ -1,18 +1,24 @@
 package com.SpringVintud.SpringVintud;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 
 @Entity @Table (name="users")
-public class UserImp {
-	@Id @GeneratedValue( strategy=GenerationType.IDENTITY )
+public class UserImp  implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue( strategy=GenerationType.IDENTITY )
+	private long id;
 	@Column( name="first_name" )
 	private String nom;
 	@Column( name="last_name" )
@@ -26,15 +32,13 @@ public class UserImp {
 	@Column( name="u_password" )
 	private String motPasse;
 	@Column( name="phone" )
-	private String numTele;
-	@Column( name="id" )
-	private int id;
+	private String numTele;	
 	@Column( name="role_id" )
-	private int role_id;
+	private long role_id;
 	List<AnnouncementImpl> listeAnnonce= new ArrayList<AnnouncementImpl>();
 	List<AnnouncementImpl> listeAnnonceF= new ArrayList<AnnouncementImpl>();	
 	
-		public  UserImp (String nom,String prenom, String pseudo, String mail, String motPasse, String numTele, String adresse, int role_id,int id) {
+		public  UserImp (String nom,String prenom, String pseudo, String mail, String motPasse, String numTele, String adresse, long role_id,long id) {
 			this.id=id;
 			this.numTele=numTele;
 			this.nom=nom;
@@ -115,7 +119,7 @@ public class UserImp {
 			this.numTele = numTele;
 		}
 		
-		public int getRole_id() {
+		public long getRole_id() {
 			return role_id;
 		}
 
@@ -124,7 +128,7 @@ public class UserImp {
 		}
 		
 
-		public int getId() {
+		public long getId() {
 			return id;
 		}
 
