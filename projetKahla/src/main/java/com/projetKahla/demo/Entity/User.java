@@ -15,12 +15,12 @@ import javax.persistence.Table;
 @Table (name = "users")
 public class User {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue (strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String username;
 	private String password;
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER)	
 	private Collection<Role> roles= new ArrayList<>();
 	
 	public User(String name, String username, String password, Collection<Role> roles) {
