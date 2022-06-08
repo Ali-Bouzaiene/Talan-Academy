@@ -3,6 +3,7 @@ package com.projetAngular.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import com.projetAngular.demo.service.EmployeeService;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin
 public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
@@ -23,7 +25,7 @@ public class EmployeeController {
 	public List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();		
 	}
-	@PostMapping ("/save/employee")
+	@PostMapping ("/employees")
 	public Employee saveEmployee (@RequestBody Employee employee) {
 		return employeeService.saveEmployee(employee);		
 	} 
