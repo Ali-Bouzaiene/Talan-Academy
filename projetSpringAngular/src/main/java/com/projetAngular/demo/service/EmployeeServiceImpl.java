@@ -17,15 +17,16 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public List<Employee> getAllEmployees() {		
 		return employeeRepository.findAll();
 	}
+	
+	@Override
+	public Employee getEmployee(long id) {	
+		Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
+		return employee;
+	}
 
 	@Override
 	public Employee saveEmployee(Employee employee) {		
 		return employeeRepository.save(employee);
-	}
-
-	@Override
-	public void deleteEmployee(long id) {
-		employeeRepository.deleteById(id);		
 	}
 
 	@Override
@@ -37,6 +38,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Employee updateEmployee = employeeRepository.save(employee);
 		
 		return updateEmployee;
+	}
+	
+	@Override
+	public void deleteEmployee(long id) {
+		employeeRepository.deleteById(id);		
 	}
 	
 }

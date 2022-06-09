@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,17 +26,20 @@ public class EmployeeController {
 	public List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();		
 	}
+	@GetMapping ("/employees/{id}")
+	public Employee getEmployee(@PathVariable long id) {
+		return employeeService.getEmployee(id);
+	}
 	@PostMapping ("/employees")
 	public Employee saveEmployee (@RequestBody Employee employee) {
 		return employeeService.saveEmployee(employee);		
 	} 
-	@DeleteMapping("/delete/employee")
-	public void deleteEmployee() {
-		employeeService.deleteEmployee(8); 
-	} 
-	@PutMapping("/update/{id}")
-	public Employee updateEmployee() {
-		return employeeService.updateEmployee(0, null);
-		
+	@PutMapping("/employees/{id}")
+	public Employee updateEmployee(@PathVariable long id, @RequestBody Employee employeeDetails) {
+		return employeeService.updateEmployee(id, employeeDetails);		
 	}
+	@DeleteMapping("/employees/{id}")
+	public void deleteEmployee(@PathVariable long id) {
+		employeeService.deleteEmployee(id); 
+	} 
 }
